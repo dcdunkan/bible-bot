@@ -2,10 +2,11 @@ import { DetaAdapter } from "../../deps.ts";
 import env from "../env.ts";
 
 interface Verse {
-  version: string;
-  book: string;
+  translation: string;
+  book: number;
   chapter: number;
   verse: number;
+  time: number;
 }
 
 export interface SessionData {
@@ -26,10 +27,11 @@ export function initial(): SessionData {
       versePerPage: 10,
     },
     lastRead: {
-      version: "kjv",
-      book: "John",
+      translation: "kjv",
+      book: 43,
       chapter: 3,
       verse: 16,
+      time: Date.now(),
     },
     bookmarks: [],
   };

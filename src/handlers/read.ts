@@ -9,9 +9,8 @@ export const read = new Composer<Context>();
 
 read.command("read", async (ctx) => {
   const translation = ctx.session.settings.defaultTranslation;
-  await ctx.answerCallbackQuery();
-  await ctx.editMessageText(
-    `${translation} › <b>Testaments</b>\nChoose a testament to list the books.`,
+  await ctx.reply(
+    `${translation.toUpperCase()} › <b>Testaments</b>\nChoose a testament to list the books.`,
     {
       reply_markup: new InlineKeyboard()
         .text("Old Testament", `read:${translation}:old`)
@@ -106,6 +105,14 @@ read.callbackQuery(/read:(\w+):(\d+):(\d+)-(\d+)/, async (ctx) => {
     .text("#", `read:${translation}:${book}-1`)
     .text("📚", `read:${translation}`)
     .text("🗣", `tr:1`);
+
+  ctx.session.lastRead = {
+    translation,
+    book,
+    chapter,
+    verse: verses[0].verse,
+    time: Date.now(),
+  };
 
   await ctx.answerCallbackQuery();
   await ctx.editMessageText(message, { reply_markup: keyboard });
