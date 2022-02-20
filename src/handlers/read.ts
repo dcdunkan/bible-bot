@@ -53,16 +53,15 @@ read.callbackQuery(/read:(\w+):(\d+):(\d+)-(\d+)/, async (ctx) => {
 
   let message = `<b>${data.name}</b>\n` +
     `${data.language}: ${data.translation}\n` +
-    `${totalPages !== 1 ? `\nPage ${page} of ${totalPages}` : ""}\n` +
-    `<i>Showing ${verses.length} verses of ${data.total}</i>`;
+    `${totalPages !== 1 ? `Page ${page} of ${totalPages}\n` : ""}` +
+    `<i>Showing ${verses.length} verses of ${data.total}</i>\n`;
 
+  const mdVerse = ctx.session.settings.markdownedVerse;
   for (let i = 0; i < verses.length; i++) {
     if (!verses[i]) break;
     const { verse, text } = verses[i];
-    message += `\n${verse}. ${
-      ctx.session.settings.markdownedVerse
-        ? `<code>${sanitize(text.trim())}</code>`
-        : sanitize(text.trim())
+    message += `\n<b>${verse}</b> ${
+      mdVerse ? `<code>${sanitize(text.trim())}</code>` : sanitize(text.trim())
     }`;
   }
 
