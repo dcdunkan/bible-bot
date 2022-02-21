@@ -1,5 +1,8 @@
 import { InlineKeyboard } from "../../deps.ts";
 import { getChapters, getTranslations } from "./api.ts";
+import { books } from "./constants.ts";
+import { Context } from "./context.ts";
+import { Verse } from "./session.ts";
 
 export async function getTranslationsKeyboard(
   page: number,
@@ -96,6 +99,53 @@ export async function getChaptersKeyboard(
     book_name,
     language,
   };
+}
+
+export function getBookmarks(
+  ctx: Context,
+  bkmarks: Verse[],
+  page = 1,
+): { keyboard: InlineKeyboard; message: string } {
+  const start = (page - 1) * 10, end = start + 10;
+  const bookmarks = bkmarks.slice(start, end);
+  const keyboard = new InlineKeyboard();
+  let message = "🔖 <b>Bookmarks</b>\n";
+
+  const lastPage = Math.ceil(bkmarks.length / 10);
+  for (let i = 0; i < bookmarks.length; i++) {
+    const { book, chapter, translation, verse } = bookmarks[i];
+    message += `\n${((page - 1) * 10) + i + 1}. ${
+      books[book - 1]
+    } ${chapter}:${verse} (${translation.toUpperCase()})`;
+    const vpage = Math.ceil(verse / ctx.session.settings.versePerPage);
+    keyboard
+      .text(
+        `${books[book - 1]} ${chapter}:${verse} (${translation.toUpperCase()})`,
+        `read:${translation}:${book}:${chapter}-${vpage}`,
+      )
+      .text(
+        "❌🔖",
+        `bookmark:${translation}:${book}:${chapter}-${vpage}-list`,
+      )
+      .row();
+  }
+
+  if (lastPage !== 1) {
+    if (page === lastPage) {
+      keyboard.row().text(
+        "￩ Previous",
+        `bookmarks:${page - 1}`,
+      );
+    } else if (page === 1) {
+      keyboard.row().text("Next ￫", `bookmarks:${page + 1}`);
+    } else {
+      keyboard.row()
+        .text("￩ Previous", `bookmarks:${page - 1}`)
+        .text("Next ￫", `bookmarks:${page + 1}`);
+    }
+  }
+
+  return { keyboard, message };
 }
 
 export const keyboards = {

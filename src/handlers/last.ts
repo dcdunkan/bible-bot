@@ -11,7 +11,7 @@ export default async function (ctx: Context): Promise<void> {
   const message = (book === 43 && chapter === 3 && verse === 16)
     ? `Would you like to open <b>John 3:16</b>?`
     : `Ah, I see. You were reading <b>${books[book - 1]} ` +
-      `${chapter}:${verse}</b> in <b>${translation.toUpperCase()}</b>` +
+      `${chapter}:${verse}</b> in <b>${translation.toUpperCase()}</b> ` +
       `${diff} ago. Click the button below to continue reading.`;
 
   const keyboard = new InlineKeyboard();

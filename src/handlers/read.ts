@@ -82,6 +82,13 @@ read.callbackQuery(/read:(\w+):(\d+):(\d+)-(\d+)/, async (ctx) => {
   } else {
     keyboard.text(`￩ Relevations`, `read:${translation}:66-1`);
   }
+  const bookmarks = new Map(Object.entries(ctx.session.bookmarks));
+  const bkmarkId = `${translation}-${book}-${chapter}-${page}`;
+
+  keyboard.text(
+    bookmarks.has(bkmarkId) ? "❌🔖" : "🔖",
+    `bookmark:${translation}:${book}:${chapter}-${page}`,
+  );
 
   if (isThereNextPage) {
     keyboard.text(
