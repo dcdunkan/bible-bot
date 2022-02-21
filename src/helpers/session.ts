@@ -1,7 +1,7 @@
 import { DetaAdapter } from "../../deps.ts";
 import env from "../env.ts";
 
-interface Verse {
+export interface Verse {
   translation: string;
   book: number;
   chapter: number;
@@ -16,14 +16,16 @@ export interface SessionData {
     versePerPage: number;
   };
   lastRead: Verse;
-  bookmarks: Verse[];
+  bookmarks: {
+    [key: string]: Verse;
+  };
 }
 
 export function initial(): SessionData {
   return {
     settings: {
       defaultTranslation: "kjv",
-      markdownedVerse: true,
+      markdownedVerse: false,
       versePerPage: 10,
     },
     lastRead: {
@@ -33,7 +35,7 @@ export function initial(): SessionData {
       verse: 16,
       time: Date.now(),
     },
-    bookmarks: [],
+    bookmarks: {},
   };
 }
 
