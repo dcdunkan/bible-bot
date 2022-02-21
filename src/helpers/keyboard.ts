@@ -6,6 +6,8 @@ import { Verse } from "./session.ts";
 
 export async function getTranslationsKeyboard(
   page: number,
+  cbdataPrefix = "read",
+  pageCbdataPrefix = "tr",
 ) {
   const trs = await getTranslations();
   if (!trs) return;
@@ -23,17 +25,20 @@ export async function getTranslationsKeyboard(
     if (!translations[i]) break;
     const { abbreviation: abbr, language } = translations[i];
     if (i !== 0 && i % IN_ONE_ROW === 0) keyboard.row();
-    keyboard.text(`${abbr.toUpperCase()}: ${language}`, `read:${abbr}`);
+    keyboard.text(
+      `${abbr.toUpperCase()}: ${language}`,
+      `${cbdataPrefix}:${abbr}`,
+    );
   }
 
   if (page === lastPage) {
-    keyboard.row().text("￩ Previous", `tr:${page - 1}`);
+    keyboard.row().text("￩ Previous", `${pageCbdataPrefix}:${page - 1}`);
   } else if (page === 1) {
-    keyboard.row().text("Next ￫", `tr:${page + 1}`);
+    keyboard.row().text("Next ￫", `${pageCbdataPrefix}:${page + 1}`);
   } else {
     keyboard.row()
-      .text("￩ Previous", `tr:${page - 1}`)
-      .text("Next ￫", `tr:${page + 1}`);
+      .text("￩ Previous", `${pageCbdataPrefix}:${page - 1}`)
+      .text("Next ￫", `${pageCbdataPrefix}:${page + 1}`);
   }
 
   return {

@@ -7,7 +7,7 @@ export const translation = new Composer<Context>();
 translation.command("translations", async (ctx) => {
   const { message_id } = await ctx.reply("Getting translations...");
 
-  const results = await getTranslationsKeyboard(1);
+  const results = await getTranslationsKeyboard(1, "read", "tr");
   if (!results) {
     return await ctx.api.editMessageText(
       ctx.chat?.id!,
@@ -26,9 +26,9 @@ Showing ${onPage} translations of ${total}`,
   );
 });
 
-translation.callbackQuery(/tr:(\d+)/, async (ctx) => {
+translation.callbackQuery(/^tr:(\d+)/, async (ctx) => {
   const page = parseInt(ctx.match![1]);
-  const results = await getTranslationsKeyboard(page);
+  const results = await getTranslationsKeyboard(page, "read", "tr");
   if (!results) {
     return await ctx.alert("Failed to fetch translations at the moment.");
   }
