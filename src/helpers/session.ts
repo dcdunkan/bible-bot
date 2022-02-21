@@ -13,7 +13,7 @@ export interface SessionData {
   settings: {
     defaultTranslation: string;
     markdownedVerse: boolean;
-    versePerPage: number;
+    versesPerPage: number;
   };
   lastRead: Verse;
   bookmarks: {
@@ -26,7 +26,7 @@ export function initial(): SessionData {
     settings: {
       defaultTranslation: "kjv",
       markdownedVerse: false,
-      versePerPage: 10,
+      versesPerPage: 10,
     },
     lastRead: {
       translation: "kjv",

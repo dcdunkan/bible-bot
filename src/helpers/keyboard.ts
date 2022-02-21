@@ -122,7 +122,7 @@ export function getBookmarks(
     message += `\n${((page - 1) * 10) + i + 1}. ${
       books[book - 1]
     } ${chapter}:${verse} (${translation.toUpperCase()})`;
-    const vpage = Math.ceil(verse / ctx.session.settings.versePerPage);
+    const vpage = Math.ceil(verse / ctx.session.settings.versesPerPage);
     keyboard
       .text(
         `${books[book - 1]} ${chapter}:${verse} (${translation.toUpperCase()})`,

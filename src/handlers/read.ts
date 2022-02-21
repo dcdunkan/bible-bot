@@ -31,7 +31,7 @@ read.callbackQuery(/read:(\w+):(\d+):(\d+)-(\d+)/, async (ctx) => {
   const book = parseInt(_book),
     chapter = parseInt(_chapter),
     page = parseInt(_page);
-  const PER_PAGE = ctx.session.settings.versePerPage;
+  const PER_PAGE = ctx.session.settings.versesPerPage;
 
   const start = PER_PAGE * (page - 1), end = (PER_PAGE * page);
 

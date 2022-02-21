@@ -5,7 +5,7 @@ import { timeDistanceToNow } from "../helpers/utils.ts";
 
 export default async function (ctx: Context): Promise<void> {
   const { book, chapter, verse, translation } = ctx.session.lastRead;
-  const page = Math.ceil(verse / ctx.session.settings.versePerPage);
+  const page = Math.ceil(verse / ctx.session.settings.versesPerPage);
   const diff = timeDistanceToNow(ctx.session.lastRead.time);
 
   const message = (book === 43 && chapter === 3 && verse === 16)

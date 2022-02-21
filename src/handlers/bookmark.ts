@@ -17,7 +17,7 @@ bookmark.callbackQuery([
   const book = parseInt(_book),
     chapter = parseInt(_chapter),
     page = parseInt(_page),
-    verse = (page - 1) * ctx.session.settings.versePerPage + 1;
+    verse = (page - 1) * ctx.session.settings.versesPerPage + 1;
 
   const bookmarks = new Map(Object.entries(ctx.session.bookmarks));
   const bkmarkId = `${translation}-${book}-${chapter}-${page}`;
