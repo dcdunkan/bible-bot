@@ -1,4 +1,6 @@
 // deno-fmt-ignore-file
+export const VERSION = "4.0.0";
+
 export const chapters = [
   50, 40, 27, 36, 34,  24, 21,  4, 31, 24, 22, 25, 29,
   36, 10, 13, 10, 42, 150, 31, 12,  8, 66, 52,  5, 48,

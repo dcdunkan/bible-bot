@@ -11,6 +11,7 @@ import { defaultH } from "./default.ts";
 import { settings } from "./settings.ts";
 import reference from "./reference.ts";
 import validReferences from "./valid_references.ts";
+import about from "./about.ts";
 
 export const handlers = new Composer<Context>();
 
@@ -23,5 +24,6 @@ handlers.use(bookmark);
 handlers.use(defaultH);
 handlers.use(settings);
 handlers.command("valid_references", validReferences);
+handlers.command("about", about);
 
 handlers.on("message:text", reference);
