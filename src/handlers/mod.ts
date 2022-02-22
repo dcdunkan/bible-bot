@@ -9,6 +9,7 @@ import toggleMarkdown from "./toggle_markdown.ts";
 import { bookmark } from "./bookmark.ts";
 import { defaultH } from "./default.ts";
 import { settings } from "./settings.ts";
+import reference from "./reference.ts";
 
 export const handlers = new Composer<Context>();
 
@@ -20,3 +21,5 @@ handlers.command("toggle_markdown", toggleMarkdown);
 handlers.use(bookmark);
 handlers.use(defaultH);
 handlers.use(settings);
+
+handlers.on("message:text", reference);

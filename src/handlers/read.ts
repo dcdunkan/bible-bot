@@ -39,6 +39,20 @@ read.callbackQuery(/read:(\w+):(\d+):(\d+)-(\d+)/, async (ctx) => {
   if (!data) return await ctx.alert("Failed to get the verses.");
 
   const { verses, total } = data;
+  if (verses.length === 0) {
+    await ctx.alert(
+      "Sorry, I couldn't get the requested verses. Please click the button again.",
+    );
+    return await ctx.editMessageText(
+      `📖 Do you want to open \
+<b>${books[book - 1]} ${chapter}</b>
+in your /default translation (${translation.toUpperCase()})?`,
+      {
+        reply_markup: new InlineKeyboard()
+          .text("Continue", `read:${translation}:${book}:${chapter}-1`),
+      },
+    );
+  }
 
   const viewedVerses = start + verses.length;
   const totalPages = Math.ceil(total / PER_PAGE);

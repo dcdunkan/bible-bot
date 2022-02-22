@@ -1,2 +1,3 @@
 .env
 .cache
+src/test_func.ts
