@@ -10,6 +10,7 @@ import { bookmark } from "./bookmark.ts";
 import { defaultH } from "./default.ts";
 import { settings } from "./settings.ts";
 import reference from "./reference.ts";
+import validReferences from "./valid_references.ts";
 
 export const handlers = new Composer<Context>();
 
@@ -21,5 +22,6 @@ handlers.command("toggle_markdown", toggleMarkdown);
 handlers.use(bookmark);
 handlers.use(defaultH);
 handlers.use(settings);
+handlers.command("valid_references", validReferences);
 
 handlers.on("message:text", reference);

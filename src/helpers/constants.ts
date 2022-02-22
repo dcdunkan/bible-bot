@@ -46,20 +46,19 @@ export const booksAbbr = [
   "Rev"
 ];
 
-/** https://github.com/dcdunkan/bible-bot/blob/4ab46bfb13537ea8e0e2790cc5002489534aa01b/helpers/ref-validator.js#L23 */
 export const booksAbbr2 = [
-  "Gen",    "Ex",      "Lev",     "Num",    "Deut",
-  "Josh",   "Judg",    "Rt",      "1 sam",  "2 sam",
-  "1 king", "2 king",  "1 chro",  "2 chro", "Ez",
+  "Ge",     "Exo",     "Le",      "Num",    "Deu",
+  "Josh",   "Jud",     "Rt",      "1 Sam",  "2 Sam",
+  "1 King", "2 King",  "1 Chro",  "2 Chro", "Ez",
   "Neh",    "Est",     "Jb",      "Ps",     "Prov",
-  "Eccles", "Song",    "Isa",     "Jer",    "Lam",
-  "Ezek",   "Dan",     "Hos",     "Joel",   "Amos",
-  "Obad",   "Jonah",   "Mic",     "Nah",    "Hab",
+  "Eccl",   "Songs",   "Isa",     "Jer",    "Lam",
+  "Ezek",   "Dan",     "Ho",      "Joel",   "Amos",
+  "Obad",   "Jonah",   "Mi",      "Nah",    "Hab",
   "Zeph",   "Hag",     "Zech",    "Mal",    "Matt",
   "Mk",     "Lk",      "Jn",      "Act",    "Rom",
-  "1 cor",  "2 cor",   "Gal",     "Eph",    "Phil",
-  "Col",    "1 thess", "2 thess", "1 tim",  "2 tim",
-  "Tit",    "Philem",  "Heb",     "Jm",     "1 pet",
-  "2 pet",  "1 jn",    "2 jn",    "3 jn",   "Jud",
-  "Rev"
+  "1 Cor",  "2 Cor",   "Gal",     "Eph",    "Phil",
+  "Col",    "1 Thes",  "2 Thes",  "1 Tim",  "2 Tim",
+  "Tit",    "Philem",  "Heb",     "Jm",     "1 Pet",
+  "2 Pet",  "1 Jn",    "2 Jn",    "3 Jn",   "Jud",
+  "Re"
 ];
