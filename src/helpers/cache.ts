@@ -1,4 +1,12 @@
 /**
+ * NOTE: Set environment variable `USE_CACHE` to 1 to enable caching.
+ * If caching is enabled, you can reduce the calls to https://getbible.net
+ * API and get the data even more faster.
+ */
+
+export const useCache = Deno.env.get("USE_CACHE") === "1";
+
+/**
  * The previous version of this Bible bot didn't had a caching system. If it was
  * there, we could reduce the API server calls and get the data even faster.
  * With a proper timeout system, we can cache the scripture data that the user
@@ -8,19 +16,22 @@
 
 import { dirname, emptyDirSync, join } from "../../deps.ts";
 
-await Deno.mkdir(".cache", { recursive: true });
-
-/**
- * I don't think this is an efficient way to clear the cache based on a time
- * interval. But it works. Anyway, I thought about checking the creation time of
- * the file and comparing it to the current time. But, as far as I checked, it's
- * inefficient since it has to check all the files. Another way is to set a
- * timeout for the cached file when creating it. But, it's almost the same,
- * right? I don't know. If you have any idea, please let me know.
- */
-setInterval(() => {
+if (useCache) {
   if (fileExists(".cache")) emptyDirSync(".cache");
-}, 1000 * 60 * 60 * 6); // A 6-hour interval to clear the cache.
+  await Deno.mkdir(".cache", { recursive: true });
+
+  /**
+   * I don't think this is an efficient way to clear the cache based on a time
+   * interval. But it works. Anyway, I thought about checking the creation time of
+   * the file and comparing it to the current time. But, as far as I checked, it's
+   * inefficient since it has to check all the files. Another way is to set a
+   * timeout for the cached file when creating it. But, it's almost the same,
+   * right? I don't know. If you have any idea, please let me know.
+   */
+  setInterval(() => {
+    if (fileExists(".cache")) emptyDirSync(".cache");
+  }, 1000 * 60 * 60 * 6); // A 6-hour interval to clear the cache.
+}
 
 export function isCached(path: string): boolean {
   return fileExists(getPath(path));

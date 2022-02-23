@@ -1,19 +1,19 @@
 import { Book, Chapter, Chapters, Translation, Verse } from "../types.ts";
-import { getCache, isCached, writeCache } from "./cache.ts";
+import { getCache, isCached, useCache, writeCache } from "./cache.ts";
 
 const API_ROOT = "https://getbible.net/v2";
 
 async function getData<T>(
   src: string,
 ): Promise<T | undefined> {
-  if (isCached(src)) {
+  if (useCache && isCached(src)) {
     return getCache<T>(src);
   } else {
     const res = await fetch(`${API_ROOT}/${src}`);
     if (!res.ok) return;
     let data = await res.json();
     data = data.verses ? data : Object.values(data);
-    writeCache(src, data);
+    if (useCache) writeCache(src, data);
     return data as T;
   }
 }
