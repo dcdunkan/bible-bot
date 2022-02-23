@@ -29,11 +29,8 @@ bot.catch(async ({ ctx, error }) => {
   }
 });
 
-const currentCommands = await bot.api.getMyCommands();
-if (currentCommands.length === 0) {
-  await bot.api.setMyCommands(commands, {
-    scope: {
-      type: "all_private_chats",
-    },
-  });
-}
+await bot.api.setMyCommands(commands, {
+  scope: {
+    type: "all_private_chats",
+  },
+});
