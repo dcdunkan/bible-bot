@@ -82,12 +82,19 @@ experience deploying to Deno Deploy, let me try first).
 | `LOCALLY`     | No.       | Set this to any value to run the bot locally.                                    |
 | `USE_CACHE`   | No.       | Set the value to 1 if you want caching to work.                                  |
 
-**Made with ❤️ and ☕**
-
 ## License
 
 [MIT License](LICENSE). Copyright (c) 2022 dcdunkan (Dunkan)
 
+## Contributing
+
+Feel free to contribute! And if you are having issues or if you want suggest
+something, please open an issue here:
+https://github.com/dcdunkan/bible-bot/issues. Or, open a
+[PQ](https://telegram.me/grammyjs/34358)!
+
 ---
 
-In memory of my friend Shamil
+_In loving memory of my friend Shamil._
+
+**Made with ❤️ and ☕**
