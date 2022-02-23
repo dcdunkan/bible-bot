@@ -64,3 +64,13 @@ export const booksAbbr2 = [
   "2 Pet",  "1 Jn",    "2 Jn",    "3 Jn",   "Jud",
   "Re"
 ];
+
+export const commands = [
+  { command: "read", description: "Start reading in default translation" },
+  { command: "help", description: "Help message" },
+  { command: "translations", description: "List all translations" },
+  { command: "last", description: "Go to last read passage" },
+  { command: "bookmarks", description: "Your saved bookmarks" },
+  { command: "default", description: "Change default translation" },
+  { command: "settings", description: "Customize settings" },
+]
