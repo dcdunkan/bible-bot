@@ -2,7 +2,7 @@ import { serve, webhookCallback } from "./deps.ts";
 import { bot } from "./src/bot.ts";
 
 const LOG_CHAT_ID = Deno.env.get("LOG_CHAT_ID");
-const runLocally = !!Deno.env.get("DEBUG");
+const runLocally = !!Deno.env.get("LOCALLY");
 
 if (runLocally) {
   bot.start({

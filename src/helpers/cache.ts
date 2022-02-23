@@ -17,6 +17,7 @@ export const useCache = Deno.env.get("USE_CACHE") === "1";
 import { dirname, emptyDirSync, join } from "../../deps.ts";
 
 if (useCache) {
+  console.log("Caching is enabled.");
   if (fileExists(".cache")) emptyDirSync(".cache");
   await Deno.mkdir(".cache", { recursive: true });
 
