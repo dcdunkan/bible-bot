@@ -6,7 +6,7 @@ A simple Bible Bot, for reading the whole Bible in 80+ translations inside
 Telegram. You can read the bible, request a passage by sending the reference and
 customise your experience. This is a complete re-write and modified version of
 the previous version: 3, which you can find here:
-https://github.com/dcdunkan/bible-bot-v3.
+[dcdunkan/bible-bot-v3](https://github.com/dcdunkan/bible-bot-v3).
 
 Re-writed in [TypeScript](https://typescriptlang.org) and
 [grammY](https://grammy.dev/) and now it runs on [Deno](https://deno.land/).
@@ -90,8 +90,8 @@ experience deploying to Deno Deploy, let me try first).
 
 Feel free to contribute! And if you are having issues or if you want suggest
 something, please open an issue here:
-https://github.com/dcdunkan/bible-bot/issues. Or, open a
-[PQ](https://telegram.me/grammyjs/34358)!
+[dcdunkan/bible-bot/issues](https://github.com/dcdunkan/bible-bot/issues). Or,
+open a [PQ](https://telegram.me/grammyjs/34358)!
 
 ---
 
