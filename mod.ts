@@ -7,19 +7,13 @@ const runLocally = !!Deno.env.get("LOCALLY");
 if (runLocally) {
   bot.start({
     drop_pending_updates: true,
-    onStart: async ({ username }) => {
-      console.log(`${username} started.`);
-      if (!LOG_CHAT_ID) return;
-      await bot.api.sendMessage(
-        parseInt(LOG_CHAT_ID),
-        `Logs @${username}\n<code>${
-          new Date().toISOString()
-        }</code>\nBot started.`,
-      );
-    },
+    onStart: async ({ username }) => await initLog(username),
   });
 } else {
   const handleUpdate = webhookCallback(bot, "std/http");
+  await bot.init();
+  await initLog();
+
   serve(async (req) => {
     if (req.method == "POST") {
       try {
@@ -29,7 +23,19 @@ if (runLocally) {
         return new Response();
       }
     }
-
-    return new Response();
+    return new Response(
+      `Hey! I'm running here: \
+<a href="https://telegram.me/${bot.botInfo.username}">@${bot.botInfo.username}</a>`,
+    );
   });
+}
+
+async function initLog(username?: string) {
+  if (!LOG_CHAT_ID) return;
+  await bot.api.sendMessage(
+    parseInt(LOG_CHAT_ID),
+    `Logs @${username ?? bot.botInfo.username}\n<code>${
+      new Date().toISOString()
+    }</code>\nBot started.`,
+  );
 }
