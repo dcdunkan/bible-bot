@@ -54,6 +54,8 @@ in your /default translation (${translation.toUpperCase()})?`,
     );
   }
 
+  await ctx.answerCallbackQuery();
+
   const viewedVerses = start + verses.length;
   const totalPages = Math.ceil(total / PER_PAGE);
   const totalChapters = chapters[book - 1];
@@ -134,7 +136,6 @@ in your /default translation (${translation.toUpperCase()})?`,
     time: Date.now(),
   };
 
-  await ctx.answerCallbackQuery();
   await ctx.editMessageText(message, { reply_markup: keyboard });
 });
 

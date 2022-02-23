@@ -27,7 +27,6 @@ bookmark.callbackQuery([
 
   if (bookmarks.has(bkmarkId)) {
     bookmarks.delete(bkmarkId);
-    await ctx.alert("🔖 Bookmark has been removed succesfully!");
 
     // If it's a /bookmarks reply list, re-render the list.
     if (ctx.callbackQuery.data.endsWith("-list")) {
@@ -38,7 +37,10 @@ bookmark.callbackQuery([
         );
       }
       const m = getBookmarks(ctx, Object.values(ctx.session.bookmarks));
+      await ctx.answerCallbackQuery();
       return await ctx.editMessageText(m.message, { reply_markup: m.keyboard });
+    } else {
+      await ctx.alert("🔖 Bookmark has been removed succesfully!");
     }
 
     toEdit.inline_keyboard[0][1].text = "🔖";

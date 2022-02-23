@@ -45,6 +45,7 @@ settings.callbackQuery("settings:versesPerPage", async (ctx) => {
   const current = ctx.session.settings.versesPerPage;
   const next = supported[(supported.indexOf(current) + 1) % supported.length];
   ctx.session.settings.versesPerPage = next;
+  await ctx.answerCallbackQuery();
   await ctx.editMessageText(settingsMsg(ctx), {
     reply_markup: settingsKeyboard(ctx),
   });
@@ -52,6 +53,7 @@ settings.callbackQuery("settings:versesPerPage", async (ctx) => {
 
 settings.callbackQuery("settings:markdownedVerse", async (ctx) => {
   ctx.session.settings.markdownedVerse = !ctx.session.settings.markdownedVerse;
+  await ctx.answerCallbackQuery();
   await ctx.editMessageText(settingsMsg(ctx), {
     reply_markup: settingsKeyboard(ctx),
   });
