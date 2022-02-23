@@ -11,6 +11,12 @@ the previous version: 3, which you can find here:
 Re-writed in [TypeScript](https://typescriptlang.org) and
 [grammY](https://grammy.dev/) and now it runs on [Deno](https://deno.land/).
 
+- [Built Using](#built-using)
+- [🦕 Features](#-features)
+- [⚙️ Setup](#️-setup)
+- [License](#license)
+- [Contributing](#contributing)
+
 ## Built Using
 
 Thanks to these tools and libraries.
@@ -59,6 +65,8 @@ Make sure you have installed [Deno](https://deno.land/).
   ```bash
   deno run --allow-net --allow-env --allow-read --allow-write mod.ts
   ```
+
+  **Required permissions**
   - `--allow-net` - To communicate with Telegram servers and recieve updates.
   - `--allow-env` - To access environment variables.
   - `--allow-read` - To read cached files.
@@ -69,8 +77,33 @@ console.
 
 ### Deploy
 
-Deploy the bot to Deno Deploy (**Documentation in progress!** - Since I have no
-experience deploying to Deno Deploy, let me try first).
+The working bot, [@scripturbot](https://telegram.me/scripturbot) is currently
+deployed on **[Deno Deploy](https://deno.com/deploy) (Beta 3)**. Even though I
+have implemented a fine getbible.net API call caching system, it's not being
+used since Deno Deploy currently does not provide file system writing access. If
+you're deploying to Heroku or some other, you should be able to enable caching
+by providing a `USE_CACHE=1` in [environment variables](#environment-variables).
+
+Click the button to deploy to [Deno Deploy](https://deno.com/deploy).
+
+[![Deploy to Deno Deploy](https://user-images.githubusercontent.com/23035000/116934239-b0d4a400-ac32-11eb-83f6-0c4119d59fa8.png)](https://dash.deno.com/new?url=https://raw.githubusercontent.com/dcdunkan/bible-bot/main/mod.ts&env=BOT_TOKEN,DETA_KEY)
+
+<sub>Or
+<a href="https://dash.deno.com/new?url=https://raw.githubusercontent.com/dcdunkan/bible-bot/main/mod.ts&env=BOT_TOKEN,DETA_KEY">click
+here</a></sub>
+
+After deploying you will get a link to your application, in the format
+`https://<appname>.deno.dev/`.
+
+Open browser and go to link below
+
+- Replace the `<BOT_TOKEN>` with your `BOT_TOKEN`
+- Replace `<APP_URL>` with the link to your application.
+
+`https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<APP_URL>`
+
+This will set the bot's webhook to the deployed application, so it will be able
+to handle updates.
 
 ### Environment Variables
 
