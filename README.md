@@ -12,10 +12,10 @@ Re-writed in [TypeScript](https://typescriptlang.org) and
 [grammY](https://grammy.dev/) and now it runs on [Deno](https://deno.land/).
 
 - [Built Using](#built-using)
-- [🦕 Features](#-features)
-- [⚙️ Setup](#️-setup)
-- [License](#license)
-- [Contributing](#contributing)
+- [Features](#features)
+- [Setup › Running Locally](#running-locally)
+- [Setup › Deno Deploy](#deno-deploy)
+- [Setup › Environment Variables](#environment-variables)
 
 ## Built Using
 
@@ -27,7 +27,7 @@ Thanks to these tools and libraries.
 3. _[Deta.sh Base](https://deta.sh)_ - Free and unlimited Cloud Database
    service.
 
-## 🦕 Features
+## Features
 
 - **Read the whole Bible in 80+ translations** (Does not require any manual
   updating by this bot, it should update as the GetBible API data updates). Use
@@ -47,7 +47,7 @@ Thanks to these tools and libraries.
 I really want to add more features like, using _inline to share verses_, or
 something like a _verse image generator_, maybe? **Maybe** sometime in future.
 
-## ⚙️ Setup
+## Setup
 
 ### Running Locally
 
@@ -75,7 +75,7 @@ Make sure you have installed [Deno](https://deno.land/).
 If everything is done correct, you should see "(Username) started" in your
 console.
 
-### Deploy
+### Deno Deploy
 
 The working bot, [@scripturbot](https://telegram.me/scripturbot) is currently
 deployed on **[Deno Deploy](https://deno.com/deploy) (Beta 3)**. Even though I
@@ -95,9 +95,9 @@ here</a></sub>
 After deploying you will get a link to your application, in the format
 `https://<appname>.deno.dev/`.
 
-Open browser and go to link below
+Open browser and go to the link down below.
 
-- Replace the `<BOT_TOKEN>` with your `BOT_TOKEN`
+- Replace the `<BOT_TOKEN>` with your `BOT_TOKEN`.
 - Replace `<APP_URL>` with the link to your application.
 
 `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<APP_URL>`
