@@ -22,7 +22,11 @@ github.com/dcdunkan/bible-bot.
 — Hosted on <a href="https://deno.com/deploy">Deno Deploy</a>.
 
 Created by @dcdunkan (Dunkan) from @dcbots. Join and support the channel for future updates!
-Made with ❤️ in memory of my friend <b>Shamil</b>.`;
+Made with ❤️ in memory of my friend <b>Shamil</b>.
+
+If you're facing issues or if you have suggestions open an issue \
+<a href="https://github.com/dcdunkan/bible-bot/issues">here on GitHub</a> or \
+report it to @dcdunkan.`;
 
 export default async function (ctx: Context) {
   await ctx.reply(message, {
