@@ -23,22 +23,12 @@ if (runLocally) {
         return new Response();
       }
     }
-    return new Response(
-      `<html>
-<head>
-  <title>${bot.botInfo.first_name}</title>
-</head>
-<body>
-  <h1>Hey! I'm running here: <a href="https://telegram.me/${bot.botInfo.username}">@${bot.botInfo.username}</a></h1>
-</body>
-</html>`,
-      {
-        headers: {
-          "Content-type": "text/html",
-        },
-        status: 200,
-      },
-    );
+    const body =
+      `<html><head><title>${bot.botInfo.first_name}</title></head><body><h1>Hey! I'm running here: <a href="https://telegram.me/${bot.botInfo.username}">@${bot.botInfo.username}</a></h1></body></html>`;
+    return new Response(body, {
+      headers: { "Content-type": "text/html" },
+      status: 200,
+    });
   });
 }
 
