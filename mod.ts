@@ -12,7 +12,9 @@ if (runLocally) {
 } else {
   const handleUpdate = webhookCallback(bot, "std/http");
   await bot.init();
-  await initLog();
+  // Disabling due to Deno Deploy's quick idling & restart.
+  // (Lots of start log messages!)
+  // await initLog();
 
   serve(async (req) => {
     if (req.method == "POST") {
