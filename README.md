@@ -1,12 +1,14 @@
-<h1 align="center">Bible Bot v4</h1>
+<h1 align="center">Bible Bot</h1>
 
-### Try the running bot here: [Scripture Bot](https://telegram.me/scripturbot)
+### Try official public instance of the bot here: [Scripture Bot](https://telegram.me/scripturbot)
 
-A simple Bible Bot, for reading the whole Bible in 80+ translations inside
+Bible Bot, for reading the whole Bible in 80+ translations inside
 Telegram. You can read the bible, request a passage by sending the reference and
-customize your experience. This is a complete re-write and modified version of
-the previous version: 3, which you can find here:
-[dcdunkan/bible-bot-v3](https://github.com/dcdunkan/bible-bot-v3).
+customize your experience. 
+
+> This is a complete re-write and modified version of
+> the previous version: 3, which you can find here:
+> [dcdunkan/bible-bot-v3](https://github.com/dcdunkan/bible-bot-v3).
 
 Re-written in [TypeScript](https://typescriptlang.org) and
 [grammY](https://grammy.dev/) and now it runs on [Deno](https://deno.land/).
@@ -21,10 +23,10 @@ Re-written in [TypeScript](https://typescriptlang.org) and
 
 Thanks to these tools and libraries.
 
-1. _[GetBible.net API](https://getbible.net/api)_ — A simple API used for
-   fetching the Scripture data.
-2. _[grammY](https://grammy.dev)_ - The Telegram Bot Framework.
-3. _[Deta.sh Base](https://deta.sh)_ - Free and unlimited Cloud Database
+1. _[GetBible.net API](https://getbible.net)_ — A simple API used for
+   fetching the Scripture data for the various translations.
+2. _[grammY](https://grammy.dev)_ - The coolest Telegram Bot Framework.
+3. _[Deta Space Database](https://deta.space)_ - Free and unlimited Cloud Database
    service.
 
 ## Features
@@ -39,7 +41,7 @@ Thanks to these tools and libraries.
   when using `/read` command and requesting passages.
 - **Bookmarks**. Click on the 🔖 button to bookmark a page and ❌🔖 to remove it.
   Use `/bookmarks` to list all of your bookmarks.
-- **Customize your experience** with the limited options (You can suggest
+- **Customize your experience** with the options (You can suggest
   something new by opening an issue or by contributing) in the `/settings` menu.
 - **I was reading ABC last day.** Ah, use `/last` to get back to the last read
   page.
@@ -51,7 +53,7 @@ something like a _verse image generator_, maybe? **Maybe** sometime in future.
 
 ### Running Locally
 
-Make sure you have installed [Deno](https://deno.land/).
+Make sure you have installed [Deno](https://deno.land).
 
 - Clone the repository.
   ```bash
@@ -63,17 +65,18 @@ Make sure you have installed [Deno](https://deno.land/).
   `1`.
 - Run the bot using the command below.
   ```bash
-  deno run --allow-net --allow-env --allow-read --allow-write mod.ts
+  DEBUG=1 deno run \
+    --allow-net --allow-env --allow-read --allow-write \
+    main.ts
   ```
+
+  > Or set `DEBUG=grammy*` to see the debug logs.
 
   **Required permissions**
   - `--allow-net` - To communicate with Telegram servers and receive updates.
   - `--allow-env` - To access environment variables.
   - `--allow-read` - To read cached files.
   - `--allow-write` - To cache files.
-
-If everything is done correct, you should see "(Username) started" in your
-console.
 
 ### Deno Deploy
 
@@ -111,23 +114,22 @@ to handle updates.
 | ------------- | --------- | -------------------------------------------------------------------------------- |
 | `BOT_TOKEN`   | **Yes.**  | The API token of the Bot. Chat with https://t.me/BotFather to get one.           |
 | `DETA_KEY`    | **Yes.**  | Project Key of Deta.sh Project. Sign up and create a project at https://deta.sh. |
-| `LOG_CHAT_ID` | No.       | The Chat's ID to log. (Bot should have message sending permissions).             |
-| `LOCALLY`     | No.       | Set this to any value to run the bot locally.                                    |
 | `USE_CACHE`   | No.       | Set the value to 1 if you want caching to work.                                  |
 
 ## License
 
-[MIT License](LICENSE). Copyright (c) 2022 dcdunkan (Dunkan)
+This application is licensed under the MIT License. See the LICENSE file for
+more information on copying and distributing this piece of software.
+
 
 ## Contributing
 
-Feel free to contribute! And if you are having issues or if you want suggest
-something, please open an issue here:
-[dcdunkan/bible-bot/issues](https://github.com/dcdunkan/bible-bot/issues). Or,
-open a [PQ](https://telegram.me/grammyjs/34358)!
+Contributions are very welcomed here! Want to suggest a feature
+or report an issue? Feel free to open issues and pull requests
+if you're working on it.
 
 ---
 
 _In loving memory of my friend Shamil._
 
-**Made with ❤️ and ☕**
+**Made with just <3**
