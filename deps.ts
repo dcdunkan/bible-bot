@@ -1,6 +1,5 @@
 export { dirname, join } from "https://deno.land/std@0.196.0/path/mod.ts";
 export { emptyDirSync } from "https://deno.land/std@0.196.0/fs/mod.ts";
-export { cleanEnv, str } from "https://deno.land/x/envalid@0.1.2/mod.ts";
 export {
   Bot,
   BotError,
