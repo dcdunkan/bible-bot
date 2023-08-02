@@ -13,7 +13,7 @@ github.com/dcdunkan/bible-bot.
 ⚙️ <b>Built with</b>
 — <a href="https://grammy.dev">grammY</a>: The Telegram bot framework.
 — <a href="https://getbible.net">GetBible.net API</a>: The Bible API.
-— <a href="https://deta.sh">Deta.sh Base</a>: Free, unlimited database service.
+— <a href="https://deta.space">Deta Base</a>: Free, unlimited database service.
 
 ℹ️ <b>More info</b>
 — Bot version: <code>${VERSION}</code>.
@@ -22,14 +22,12 @@ github.com/dcdunkan/bible-bot.
 — Hosted on <a href="https://deno.com/deploy">Deno Deploy</a>.
 
 Created by @dcdunkan (Dunkan) from @dcbots. Join and support the channel for future updates!
-Made with ❤️ in memory of my friend <b>Shamil</b>.
+Made with ❤️ in memory of my friend Shamil.
 
 If you're facing issues or if you have suggestions open an issue \
 <a href="https://github.com/dcdunkan/bible-bot/issues">here on GitHub</a> or \
 report it to @dcdunkan.`;
 
 export default async function (ctx: Context) {
-  await ctx.reply(message, {
-    disable_web_page_preview: true,
-  });
+  await ctx.reply(message);
 }

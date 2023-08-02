@@ -1,7 +1,7 @@
 import { DetaAdapter } from "../../deps.ts";
 import env from "../env.ts";
 
-export interface Verse {
+export interface SessionVerse {
   translation: string;
   book: number;
   chapter: number;
@@ -15,9 +15,9 @@ export interface SessionData {
     markdownedVerse: boolean;
     versesPerPage: number;
   };
-  lastRead: Verse;
+  lastRead: SessionVerse;
   bookmarks: {
-    [key: string]: Verse;
+    [key: string]: SessionVerse;
   };
 }
 

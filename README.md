@@ -2,12 +2,12 @@
 
 ### Try official public instance of the bot here: [Scripture Bot](https://telegram.me/scripturbot)
 
-Bible Bot, for reading the whole Bible in 80+ translations inside
-Telegram. You can read the bible, request a passage by sending the reference and
-customize your experience. 
+Bible Bot, for reading the whole Bible in 80+ translations inside Telegram. You
+can read the bible, request a passage by sending the reference and customize
+your experience.
 
-> This is a complete re-write and modified version of
-> the previous version: 3, which you can find here:
+> This is a complete re-write and modified version of the previous version: 3,
+> which you can find here:
 > [dcdunkan/bible-bot-v3](https://github.com/dcdunkan/bible-bot-v3).
 
 Re-written in [TypeScript](https://typescriptlang.org) and
@@ -23,11 +23,11 @@ Re-written in [TypeScript](https://typescriptlang.org) and
 
 Thanks to these tools and libraries.
 
-1. _[GetBible.net API](https://getbible.net)_ — A simple API used for
-   fetching the Scripture data for the various translations.
+1. _[GetBible.net API](https://getbible.net)_ — A simple API used for fetching
+   the Scripture data for the various translations.
 2. _[grammY](https://grammy.dev)_ - The coolest Telegram Bot Framework.
-3. _[Deta Space Database](https://deta.space)_ - Free and unlimited Cloud Database
-   service.
+3. _[Deta Space Database](https://deta.space)_ - Free and unlimited Cloud
+   Database service.
 
 ## Features
 
@@ -39,10 +39,10 @@ Thanks to these tools and libraries.
 - Set a default translation. You don't have to do `/translations` every time and
   choose one. You can set a default one using `/default`. And this will be used
   when using `/read` command and requesting passages.
-- **Bookmarks**. Click on the 🔖 button to bookmark a page and ❌🔖 to remove it.
-  Use `/bookmarks` to list all of your bookmarks.
-- **Customize your experience** with the options (You can suggest
-  something new by opening an issue or by contributing) in the `/settings` menu.
+- **Bookmarks**. Click on the 🔖 button to bookmark a page and ❌🔖 to remove
+  it. Use `/bookmarks` to list all of your bookmarks.
+- **Customize your experience** with the options (You can suggest something new
+  by opening an issue or by contributing) in the `/settings` menu.
 - **I was reading ABC last day.** Ah, use `/last` to get back to the last read
   page.
 
@@ -110,23 +110,21 @@ to handle updates.
 
 ### Environment Variables
 
-| Variable      | Required? | Description                                                                      |
-| ------------- | --------- | -------------------------------------------------------------------------------- |
-| `BOT_TOKEN`   | **Yes.**  | The API token of the Bot. Chat with https://t.me/BotFather to get one.           |
-| `DETA_KEY`    | **Yes.**  | Project Key of Deta.sh Project. Sign up and create a project at https://deta.sh. |
-| `USE_CACHE`   | No.       | Set the value to 1 if you want caching to work.                                  |
+| Variable    | Required? | Description                                                                      |
+| ----------- | --------- | -------------------------------------------------------------------------------- |
+| `BOT_TOKEN` | **Yes.**  | The API token of the Bot. Chat with https://t.me/BotFather to get one.           |
+| `DETA_KEY`  | **Yes.**  | Project Key of Deta.sh Project. Sign up and create a project at https://deta.sh. |
+| `USE_CACHE` | No.       | Set the value to 1 if you want caching to work.                                  |
 
 ## License
 
 This application is licensed under the MIT License. See the LICENSE file for
 more information on copying and distributing this piece of software.
 
-
 ## Contributing
 
-Contributions are very welcomed here! Want to suggest a feature
-or report an issue? Feel free to open issues and pull requests
-if you're working on it.
+Contributions are very welcomed here! Want to suggest a feature or report an
+issue? Feel free to open issues and pull requests if you're working on it.
 
 ---
 

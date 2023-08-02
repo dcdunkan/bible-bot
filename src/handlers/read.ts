@@ -33,7 +33,7 @@ read.callbackQuery(/read:(\w+):(\d+):(\d+)-(\d+)/, async (ctx) => {
     page = parseInt(_page);
   const PER_PAGE = ctx.session.settings.versesPerPage;
 
-  const start = PER_PAGE * (page - 1), end = (PER_PAGE * page);
+  const start = PER_PAGE * (page - 1), end = PER_PAGE * page;
 
   const data = await getVerses(translation, book, chapter, start, end);
   if (!data) return await ctx.alert("Failed to get the verses.");

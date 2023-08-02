@@ -1,7 +1,7 @@
 import { Book, Chapter, Chapters, Translation, Verse } from "../types.ts";
 import { getCache, isCached, useCache, writeCache } from "./cache.ts";
 
-const API_ROOT = "https://getbible.net/v2";
+const API_ROOT = "https://api.getbible.net/v2";
 
 async function getData<T>(
   src: string,

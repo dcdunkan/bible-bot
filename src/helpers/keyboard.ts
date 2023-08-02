@@ -2,7 +2,7 @@ import { InlineKeyboard } from "../../deps.ts";
 import { getChapters, getTranslations } from "./api.ts";
 import { books } from "./constants.ts";
 import { Context } from "./context.ts";
-import { Verse } from "./session.ts";
+import { SessionVerse } from "./session.ts";
 
 export async function getTranslationsKeyboard(
   page: number,
@@ -16,7 +16,7 @@ export async function getTranslationsKeyboard(
   const IN_ONE_ROW = 2;
   const lastPage = Math.ceil(trs.length / PER_PAGE);
   const start = PER_PAGE * (page - 1);
-  const end = (PER_PAGE * page);
+  const end = PER_PAGE * page;
 
   const translations = trs.slice(start, end);
 
@@ -62,7 +62,7 @@ export async function getChaptersKeyboard(
 
   const lastPage = Math.ceil(chaps.length / PER_PAGE);
   const start = PER_PAGE * (page - 1);
-  const end = (PER_PAGE * page);
+  const end = PER_PAGE * page;
 
   const chapters = chaps.slice(start, end);
 
@@ -108,7 +108,7 @@ export async function getChaptersKeyboard(
 
 export function getBookmarks(
   ctx: Context,
-  bkmarks: Verse[],
+  bkmarks: SessionVerse[],
   page = 1,
 ): { keyboard: InlineKeyboard; message: string } {
   const start = (page - 1) * 10, end = start + 10;

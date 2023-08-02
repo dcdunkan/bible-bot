@@ -70,7 +70,7 @@ export const commands = [
   { command: "help", description: "Help message" },
   { command: "translations", description: "List all translations" },
   { command: "last", description: "Go to last read passage" },
-  { command: "bookmarks", description: "Your saved bookmarks" },
+  { command: "bookmarks", description: "Saved bookmarks" }, 
   { command: "default", description: "Change default translation" },
   { command: "settings", description: "Customize settings" },
 ]
