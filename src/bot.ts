@@ -12,14 +12,14 @@ bot.use(customContextMethods);
 bot.use(handlers);
 
 bot.api.config.use((prev, method, payload) =>
-  prev(method, {
-    parse_mode: "HTML",
-    disable_web_page_preview: true,
-    allow_sending_without_reply: true,
-    ...payload,
-  })
+    prev(method, {
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+        allow_sending_without_reply: true,
+        ...payload,
+    })
 );
 
 await bot.api.setMyCommands(commands, {
-  scope: { type: "all_private_chats" },
+    scope: { type: "all_private_chats" },
 });

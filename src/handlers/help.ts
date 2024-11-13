@@ -1,7 +1,7 @@
 import { Context } from "../helpers/context.ts";
 
 const message = (ctx: Context) =>
-  `The main purpose of this bot is to help you <b>read the whole \
+    `The main purpose of this bot is to help you <b>read the whole \
 Bible inside Telegram, with support for over 80 different translations</b>.
 
 📖 You can use the /translations command to see the available translations. By choosing the \
@@ -32,5 +32,5 @@ But there's more, actually. Here's all the commands:
 🗣 Translations`;
 
 export default async function (ctx: Context) {
-  await ctx.reply(message(ctx));
+    await ctx.reply(message(ctx));
 }

@@ -76,5 +76,5 @@ The following <b>book names and abbreviations</b> are supported:
 — <code>Revelation</code> · Rev · Re`;
 
 export default async function (ctx: Context): Promise<void> {
-  await ctx.reply(message);
+    await ctx.reply(message);
 }

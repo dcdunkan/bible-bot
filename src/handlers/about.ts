@@ -29,5 +29,5 @@ If you're facing issues or if you have suggestions open an issue \
 report it to @dcdunkan.`;
 
 export default async function (ctx: Context) {
-  await ctx.reply(message);
+    await ctx.reply(message);
 }
