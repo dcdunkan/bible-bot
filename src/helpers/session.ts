@@ -1,5 +1,4 @@
-import { DetaAdapter } from "../../deps.ts";
-import env from "../env.ts";
+import { DenoKVAdapter } from "../../deps.ts";
 
 export interface SessionVerse {
     translation: string;
@@ -39,7 +38,5 @@ export function initial(): SessionData {
     };
 }
 
-export const storage = new DetaAdapter({
-    baseName: "session",
-    projectKey: env.DETA_KEY,
-});
+export const kv = await Deno.openKv();
+export const storage = new DenoKVAdapter(kv);

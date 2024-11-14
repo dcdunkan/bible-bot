@@ -1,6 +1,6 @@
 <h1 align="center">Bible Bot</h1>
 
-### Try official public instance of the bot here: [Scripture Bot](https://telegram.me/scripturbot)
+### Try the official public instance of the bot here: [Scripture Bot](https://telegram.me/scripturbot)
 
 Bible Bot, for reading the whole Bible in 80+ translations inside Telegram. You
 can read the bible, request a passage by sending the reference and customize
@@ -26,8 +26,6 @@ Thanks to these tools and libraries.
 1. _[GetBible.net API](https://getbible.net)_ — A simple API used for fetching
    the Scripture data for the various translations.
 2. _[grammY](https://grammy.dev)_ - The coolest Telegram Bot Framework.
-3. _[Deta Space Database](https://deta.space)_ - Free and unlimited Cloud
-   Database service.
 
 ## Features
 
@@ -65,35 +63,27 @@ Make sure you have installed [Deno](https://deno.land).
   `1`.
 - Run the bot using the command below.
   ```bash
-  DEBUG=1 deno run \
-    --allow-net --allow-env --allow-read --allow-write \
-    main.ts
+  DEBUG=1 deno -NI -E=DEBUG,BOT_TOKEN,USE_CACHE main.ts
   ```
 
   > Or set `DEBUG=grammy*` to see the debug logs.
 
   **Required permissions**
-  - `--allow-net` - To communicate with Telegram servers and receive updates.
-  - `--allow-env` - To access environment variables.
-  - `--allow-read` - To read cached files.
-  - `--allow-write` - To cache files.
+  - `net` - To communicate with Telegram servers and receive updates.
+  - `env` - To access environment variables.
+
+  When using the cache include:
+  - `read` - To read cached files.
+  - `write` - To write cache files.
 
 ### Deno Deploy
 
 The working bot, [@scripturbot](https://telegram.me/scripturbot) is currently
-deployed on **[Deno Deploy](https://deno.com/deploy) (Beta 3)**. Even though I
+deployed on [Deno Deploy](https://deno.com/deploy). Even though I
 have implemented a fine getbible.net API call caching system, it's not being
 used since Deno Deploy currently does not provide file system writing access. If
 you're deploying to Heroku or some other, you should be able to enable caching
 by providing a `USE_CACHE=1` in [environment variables](#environment-variables).
-
-Click the button to deploy to [Deno Deploy](https://deno.com/deploy).
-
-[![Deploy to Deno Deploy](https://user-images.githubusercontent.com/23035000/116934239-b0d4a400-ac32-11eb-83f6-0c4119d59fa8.png)](https://dash.deno.com/new?url=https://raw.githubusercontent.com/dcdunkan/bible-bot/main/mod.ts&env=BOT_TOKEN,DETA_KEY)
-
-<sub>Or
-<a href="https://dash.deno.com/new?url=https://raw.githubusercontent.com/dcdunkan/bible-bot/main/mod.ts&env=BOT_TOKEN,DETA_KEY">click
-here</a></sub>
 
 After deploying you will get a link to your application, in the format
 `https://<appname>.deno.dev/`.
@@ -112,8 +102,8 @@ to handle updates.
 
 | Variable    | Required? | Description                                                                      |
 | ----------- | --------- | -------------------------------------------------------------------------------- |
+| `DEBUG` | No. | If not set, the bot would run in the webhook mode. Set to enable long polling. |
 | `BOT_TOKEN` | **Yes.**  | The API token of the Bot. Chat with https://t.me/BotFather to get one.           |
-| `DETA_KEY`  | **Yes.**  | Project Key of Deta.sh Project. Sign up and create a project at https://deta.sh. |
 | `USE_CACHE` | No.       | Set the value to 1 if you want caching to work.                                  |
 
 ## License

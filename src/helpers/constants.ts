@@ -1,5 +1,5 @@
 // deno-fmt-ignore-file
-export const VERSION = "4.0.0";
+export const VERSION = "4.0.1";
 
 export const chapters = [
   50, 40, 27, 36, 34,  24, 21,  4, 31, 24, 22, 25, 29,
@@ -65,7 +65,7 @@ export const booksAbbr2 = [
   "Re"
 ];
 
-export const commands = [
+export const PRIVATE_CHAT_COMMANDS = [
   { command: "read", description: "Start reading in default translation" },
   { command: "help", description: "Help message" },
   { command: "translations", description: "List all translations" },

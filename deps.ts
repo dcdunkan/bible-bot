@@ -1,6 +1,5 @@
-export { dirname, join } from "https://deno.land/std@0.196.0/path/mod.ts";
-export { emptyDirSync } from "https://deno.land/std@0.196.0/fs/mod.ts";
-import {} from "";
+export { dirname, join } from "jsr:@std/path@1";
+export { emptyDirSync } from "jsr:@std/fs@1/empty-dir";
 export {
     Bot,
     BotError,
@@ -13,9 +12,11 @@ export {
     session,
     type SessionFlavor,
     webhookCallback,
-} from "https://deno.land/x/grammy@v1.17.2/mod.ts";
+} from "https://deno.land/x/grammy@v1.31.3/mod.ts";
 export type {
     InlineKeyboardButton,
     Message,
-} from "https://deno.land/x/grammy@v1.17.2/types.ts";
-export { DetaAdapter } from "https://deno.land/x/grammy_storages@v2.3.0/deta/src/mod.ts";
+} from "https://deno.land/x/grammy@v1.31.3/types.ts";
+export {
+    DenoKVAdapter,
+} from "https://deno.land/x/grammy_storages@v2.4.2/denokv/src/mod.ts";
