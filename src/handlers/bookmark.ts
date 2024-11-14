@@ -3,6 +3,8 @@ import { books } from "../helpers/constants.ts";
 import { Context } from "../helpers/context.ts";
 import { getBookmarks } from "../helpers/keyboard.ts";
 
+const MAX_BOOKMARKS = 25;
+
 export const bookmark = new Composer<Context>();
 
 bookmark.callbackQuery([
@@ -21,7 +23,7 @@ bookmark.callbackQuery([
 
     const bookmarks = new Map(Object.entries(ctx.session.bookmarks));
     const bkmarkId = `${translation}-${book}-${chapter}-${page}`;
-    const old = ctx.callbackQuery.message?.reply_markup!.inline_keyboard[0][1]
+    const old = ctx.callbackQuery.message?.reply_markup?.inline_keyboard[0][1]
         .text;
     const toEdit = ctx.callbackQuery.message?.reply_markup!;
 
@@ -47,6 +49,11 @@ bookmark.callbackQuery([
 
         toEdit.inline_keyboard[0][1].text = "🔖";
     } else {
+        if (bookmarks.size >= MAX_BOOKMARKS) {
+            return await ctx.alert(
+                `You have ${bookmarks.size} bookmarks. You can only store 25 bookmarks at a time. Please remove some to add new bookmarks.`,
+            );
+        }
         bookmarks.set(bkmarkId, {
             book,
             chapter,
