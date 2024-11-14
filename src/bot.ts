@@ -6,7 +6,7 @@ import { PRIVATE_CHAT_COMMANDS } from "./helpers/constants.ts";
 
 const BOT_TOKEN = Deno.env.get("BOT_TOKEN");
 if (BOT_TOKEN == null) {
-    throw new Error("Set BOT_TOKEN environment variable.")
+    throw new Error("Set BOT_TOKEN environment variable.");
 }
 
 export const bot = new Bot<Context>(BOT_TOKEN);

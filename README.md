@@ -79,9 +79,9 @@ Make sure you have installed [Deno](https://deno.land).
 ### Deno Deploy
 
 The working bot, [@scripturbot](https://telegram.me/scripturbot) is currently
-deployed on [Deno Deploy](https://deno.com/deploy). Even though I
-have implemented a fine getbible.net API call caching system, it's not being
-used since Deno Deploy currently does not provide file system writing access. If
+deployed on [Deno Deploy](https://deno.com/deploy). Even though I have
+implemented a fine getbible.net API call caching system, it's not being used
+since Deno Deploy currently does not provide file system writing access. If
 you're deploying to Heroku or some other, you should be able to enable caching
 by providing a `USE_CACHE=1` in [environment variables](#environment-variables).
 
@@ -100,11 +100,11 @@ to handle updates.
 
 ### Environment Variables
 
-| Variable    | Required? | Description                                                                      |
-| ----------- | --------- | -------------------------------------------------------------------------------- |
-| `DEBUG` | No. | If not set, the bot would run in the webhook mode. Set to enable long polling. |
-| `BOT_TOKEN` | **Yes.**  | The API token of the Bot. Chat with https://t.me/BotFather to get one.           |
-| `USE_CACHE` | No.       | Set the value to 1 if you want caching to work.                                  |
+| Variable    | Required? | Description                                                                    |
+| ----------- | --------- | ------------------------------------------------------------------------------ |
+| `DEBUG`     | No.       | If not set, the bot would run in the webhook mode. Set to enable long polling. |
+| `BOT_TOKEN` | **Yes.**  | The API token of the Bot. Chat with https://t.me/BotFather to get one.         |
+| `USE_CACHE` | No.       | Set the value to 1 if you want caching to work.                                |
 
 ## License
 

@@ -39,4 +39,4 @@ export function initial(): SessionData {
 }
 
 export const kv = await Deno.openKv();
-export const storage = new DenoKVAdapter(kv);
+export const storage = new DenoKVAdapter(kv, ["users"]);

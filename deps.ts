@@ -19,4 +19,4 @@ export type {
 } from "https://deno.land/x/grammy@v1.31.3/types.ts";
 export {
     DenoKVAdapter,
-} from "https://deno.land/x/grammy_storages@v2.4.2/denokv/src/mod.ts";
+} from "https://raw.githubusercontent.com/grammyjs/storages/5eda80d5f0dc4232c1affdda6aada6cc0ca3160d/packages/denokv/src/mod.ts";
