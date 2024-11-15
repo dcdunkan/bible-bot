@@ -13,7 +13,6 @@ github.com/dcdunkan/bible-bot.
 ⚙️ <b>Built with</b>
 — <a href="https://grammy.dev">grammY</a>: The Telegram bot framework.
 — <a href="https://getbible.net">GetBible.net API</a>: The Bible API.
-— <a href="https://deta.space">Deta Base</a>: Free, unlimited database service.
 
 ℹ️ <b>More info</b>
 — Bot version: <code>${VERSION}</code>.
